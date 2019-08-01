@@ -1,0 +1,3 @@
+
+Link para abrir csv en phyton
+https://code.tutsplus.com/es/tutorials/how-to-read-and-write-csv-files-in-python--cms-29907

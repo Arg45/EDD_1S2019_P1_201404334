@@ -1,0 +1,5 @@
+digraph{
+6 [shape=oval, label="id: 6 Nombre:4 Apellido: 3"];
+ 6->6
+
+}
