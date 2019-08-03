@@ -1,5 +1,6 @@
 
 import csv
+import os
 
 class Nodo_Circular_Usuarios:
     def __init__ (self, Codigo = None, Nombre = None):
@@ -13,10 +14,16 @@ class Circular_Doble:
         self.inicio = None
         self.fin = None
 
+    def estavacia(self):
+        if(self.inicio == None):
+            return True
+        else:
+            return False
+
     def insertar(self, codigo, nombre):
         nuevo = Nodo_Circular_Usuarios(codigo, nombre)
 
-        if estavacia():
+        if (Circular_Doble.estavacia):
             nuevo.siguiente = self.inicio
             nuevo.anterior = self.inicio
             self.inicio = nuevo            
@@ -33,7 +40,7 @@ class Circular_Doble:
                 self.inicio.anterior = nuevo
         self.fin = nuevo
 
-    def imprimir(self):
+    def imprimirG(self):
             """NodoCircularDoble temp = inicio;
             #print("digraph{");
             String cod = "digraph{\n";
@@ -53,13 +60,14 @@ class Circular_Doble:
             #g.grafica(cod);"""
 
     def imprimir(self):
+        print("dentro del metodo antes del while")
         aux = self.inicio
-        while aux != None:
+        while aux != self.fin:
+            print("entro al while")
             print(str(aux.codigo) +" "+ aux.nombre)
             aux = aux.siguiente
 
-    def estavacia(self):
-        return self.inicio == None
+    
 
 class Graficar:
     def grafica(self):
@@ -67,8 +75,7 @@ class Graficar:
         """try 
             String ruta = "C:\\Users\\argue\\OneDrive\\Documents\\NetBeansProjects\\[EDD]VacasJunio2019\\TareaPractica2.dot";
             File file = new File(ruta);
-
-#             Si el archivo no existe es creado
+            #Si el archivo no existe es creado
             if !file.exists()
                 file.createNewFile();
             
@@ -82,7 +89,6 @@ class Graficar:
                         " && C:\\Users\\argue\\OneDrive\\Documents\\NetBeansProjects\\[EDD]VacasJunio2019\\TareaPractica2.jpg"+
                         " && exit");"""
                 #Runtime.getRuntime().exec("cmd /k start cmd.exe");
-                cmd
         #except:
     
 
@@ -93,9 +99,12 @@ class Carga:
         ruta = "D:\\Trabajos\\U\\USAC\\Cursos\\12vo Semestre\\EDD\\201404334_EDD2S19\\EDD_1S2019_P1_201404334\\Practica 1\\prueba1.csv"
         
         #Abrir un archivo .csv
+        cd = Circular_Doble()
         with open(ruta) as File:  
             reader = csv.reader(File)
-            for row in reader:
+            i=0
+            for i in reader:
+                cd.insertar(i,row)
                 print(row)
 
         #Abrir un archivo de forma 'normal'
@@ -103,10 +112,9 @@ class Carga:
         #print(a.read())
 
 class Menu:
-    def __init__ (self):
-        print("corrio el constructor")
     def menuP(self):
         print("\n 1.Play (Jugar)\n 2.Scoreboard (Puntuaciones)\n 3.User selection (Usuarios)\n 4.Reports (Reportes)\n 5.Bulk loading (Carga masiva)\n")
+            
         
 #Metodo main
 if __name__ == "__main__":
@@ -115,11 +123,16 @@ if __name__ == "__main__":
     #c = Carga()
     #c.cargarArchivo()
 
-    g = Graficar()
-    g.grafica
+    cd = Circular_Doble()
+    cd.insertar(1,"jorge")
+    print("debera de imprimir")
+    cd.imprimir()
 
-    """a=1
-    if a==1:
-        print("es igual a "+str(a))
-    else:
-        print("no es igual a "+str(a))"""
+    
+
+    #g = Graficar()
+    #g.grafica
+    #print (os.listdir('.'))
+    #os.system(cmd /k start cmd.exe)
+
+    
