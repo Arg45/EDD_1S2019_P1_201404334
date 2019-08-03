@@ -60,12 +60,13 @@ class Circular_Doble:
             #g.grafica(cod);"""
 
     def imprimir(self):
-        print("dentro del metodo antes del while")
         aux = self.inicio
-        while aux != self.fin:
-            print("entro al while")
+        if aux == self.inicio:
             print(str(aux.codigo) +" "+ aux.nombre)
-            aux = aux.siguiente
+        else:
+            while aux != self.fin:
+                print(str(aux.codigo) +" "+ aux.nombre)
+                aux = aux.siguiente
 
     
 
