@@ -1,7 +1,7 @@
 
 import csv
 import os
-
+i=1
 class Nodo_Circular_Usuarios:
     def __init__ (self, Codigo = None, Nombre = None):
         self.codigo = Codigo
@@ -62,10 +62,10 @@ class Circular_Doble:
     def imprimir(self):
         aux = self.inicio
         if aux == self.inicio:
-            print(str(aux.codigo) +" "+ aux.nombre)
+            print(str(aux.codigo) +" "+ str(aux.nombre))
         else:
             while aux != self.fin:
-                print(str(aux.codigo) +" "+ aux.nombre)
+                print(str(aux.codigo) +" "+ str(aux.nombre))
                 aux = aux.siguiente
 
     
@@ -103,10 +103,11 @@ class Carga:
         cd = Circular_Doble()
         with open(ruta) as File:  
             reader = csv.reader(File)
-            i=0
-            for i in reader:
+            
+            for row in reader:
                 cd.insertar(i,row)
-                print(row)
+                #print(row)
+                global i+=1
 
         #Abrir un archivo de forma 'normal'
         #a=open(ruta,'r')
@@ -121,13 +122,15 @@ class Menu:
 if __name__ == "__main__":
     #m = Menu()
     #m.menuP()
-    #c = Carga()
-    #c.cargarArchivo()
-
+    c = Carga()
+    c.cargarArchivo()
     cd = Circular_Doble()
-    cd.insertar(1,"jorge")
-    print("debera de imprimir")
     cd.imprimir()
+
+    #cd = Circular_Doble()
+    #cd.insertar(1,"jorge")
+    #print("debera de imprimir")
+    #cd.imprimir()
 
     
 
