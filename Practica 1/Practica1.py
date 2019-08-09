@@ -40,7 +40,7 @@ class Circular_Doble:
                 self.inicio.anterior = nuevo
         self.fin = nuevo
 
-    def imprimirG(self):
+    def graficar(self):
             """NodoCircularDoble temp = inicio;
             #print("digraph{");
             String cod = "digraph{\n";
